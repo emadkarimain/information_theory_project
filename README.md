@@ -1,41 +1,27 @@
-# Empirical Evaluation of Lossless Data Compression Algorithms
-**Politecnico di Milano - MSc Telecommunication Engineering** **Course:** Information Theory  
-**Authors:** Emad Karimianshamsabadi & Mahdi Soltani  
+# Empirical Evaluation of Lossless Data Compression
 
-## Project Overview
-This project provides a from-scratch, empirical evaluation of lossless data compression algorithms (Huffman Coding and LZW). It compares their practical performance (Average Code Length and Compression Ratio) against the theoretical lower bound defined by Shannon's Entropy.
-
-## Data Sets Analyzed
-To evaluate algorithmic behavior across different statistical distributions, we used:
-1. **Natural Language Text:** High redundancy, predictable distribution.
-2. **Source Code (Python):** Structured redundancy, repeated syntax/keywords.
-3. **Binary/Random Data:** Uniform distribution, acting as an incompressible baseline.
+## Overview
+This repository contains a comprehensive Python-based implementation and empirical analysis of two fundamental lossless data compression algorithms: **Huffman Coding** and **Lempel-Ziv-Welch (LZW)**.
 
 ## Project Structure
-* `data/`: Contains the test files (`.txt`, `.py`, `.bin`).
-* `src/`: Python source code modules (`entropy.py`, `huffman.py`, `lzw.py`, `benchmark.py`, `visualize.py`).
-* `results/`: CSV exports of the empirical evaluation matrix.
-* `figures/`: High-resolution academic plots generated via Matplotlib/Seaborn.
+- `src/`: Core implementation of compression algorithms.
+- `data/`: Datasets used for benchmarking (Natural Text, Source Code, Binary).
+- `figures/`: Visual analysis and performance charts.
+- `results/`: Processed benchmark metrics.
 
-## How to Run
-This project requires Python 3.11+.
+## Performance Analysis
+The project evaluates the Average Code Length (L) and Compression Ratio (CR) against the theoretical Shannon Entropy lower bound.
 
-1. **Activate Virtual Environment & Install Dependencies:**
-```bash
-python -m venv venv
-# Windows: venv\Scripts\activate
-# Mac/Linux: source venv/bin/activate
-pip install -r requirements.txt
-```
+### 1. Average Code Length Comparison
+![Average Code Length](figures/code_length_comparison.png)
 
-2. **Run the Automated Benchmark:**
-```bash
-python src/benchmark.py
-```
-*This will calculate entropy, execute Huffman and LZW, and export the results to a CSV file.*
+### 2. Compression Ratio (CR)
+![Compression Ratio](figures/compression_ratio_comparison.png)
 
-3. **Generate Academic Plots:**
-```bash
-python src/visualize.py
-```
-*This will read the CSV and generate comparative charts in the `figures/` directory.*
+## Key Findings
+- **Huffman Coding:** Highly efficient for memoryless statistical sources.
+- **LZW:** Superior performance on structured data (Source Code) due to dictionary-based pattern matching.
+- **Incompressibility:** Random binary data confirms the limitations of lossless compression on maximum-entropy sources.
+
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
