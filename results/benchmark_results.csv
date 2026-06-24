@@ -1,0 +1,4 @@
+File_Name,Size_Bytes,Shannon_H,Huffman_L,Huffman_CR,LZW_L,LZW_CR
+text_sample.txt,9634,4.3576,4.3876,1.8233,4.1554,1.9252
+code_sample.py,8601,4.6103,4.6485,1.721,3.6695,2.1802
+binary_sample.bin,10000,7.9845,7.9998,1.0,11.6541,0.6865
